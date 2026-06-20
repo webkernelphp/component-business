@@ -1,0 +1,52 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "webkernel/component-business",
+    "description": "Business as first-class scoping unit for Webkernel. Legal entities, projects and workspaces that modules are activated against.",
+    "version": "0.1.0",
+    "homepage": "https://www.webkernelphp.com/",
+    "type": "webkernel-component",
+    "license": "EPL-2.0",
+    "authors": [
+        {
+            "name": "El Moumen Yassine",
+            "email": "yassine@numerimondes.com",
+            "homepage": "https://webkernelphp.com/about"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "*",
+        "webkernel/standard-lifecycle": ">=0.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkernel\\Component\\Business\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webkernel\\Component\\Business\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkernel\\Component\\Business\\Providers\\BusinessServiceProvider"
+            ]
+        },
+        "webkernel": {
+            "package_repo": "git@github.com:webkernelphp/component-business.git",
+            "prefix": "component-business",
+            "config_scope": "business"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
