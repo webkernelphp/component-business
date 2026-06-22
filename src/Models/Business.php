@@ -41,6 +41,7 @@ class Business extends Model
         'status' => BusinessStatus::class,
     ];
 
+    #[\Override]
     protected static function boot(): void
     {
         parent::boot();
@@ -109,7 +110,7 @@ class Business extends Model
 
     public static function generateUniqueSlug(string $name): string
     {
-        $base = strtolower(trim(preg_replace('/[^a-z0-9]+/i', '-', $name), '-'));
+        $base = strtolower(trim((string) preg_replace('/[^a-z0-9]+/i', '-', $name), '-'));
         $slug = $base;
         $n = 2;
 

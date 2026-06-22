@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class BusinessServiceProvider extends ServiceProvider
 {
+    #[\Override]
     public function register(): void
     {
         //
